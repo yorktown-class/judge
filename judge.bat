@@ -21,6 +21,10 @@ for %%I in (Data\%div%\*.in) do (
 		goto :loop
 	)
 	echo Accepted Test %%~nI
+	echo.
+	echo.
+	echo.
+	echo.
 )
 echo Accepted!!!
 pause
