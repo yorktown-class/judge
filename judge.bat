@@ -5,7 +5,9 @@ set /p div=""
 echo "File Name"
 set /p nm=""
 
-g++ %nm%.cpp -o tmp\%nm% 
+md tmp
+Attrib tmp +h
+g++ %nm%.cpp -o tmp\%nm% -Wl,--stack,1024000000
 
 for %%I in (Data\%div%\*.in) do (
 	echo -------------------- 
@@ -31,3 +33,5 @@ pause
 :loop
 del tmp\test.out
 del tmp\%nm%.exe
+Attrib tmp -h
+rd tmp
